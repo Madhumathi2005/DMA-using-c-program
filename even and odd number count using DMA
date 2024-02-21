@@ -1,0 +1,23 @@
+#include<stdio.h>
+void main(){
+    int limit;
+    printf("ENTER THE LIMIT : ");
+    scanf("%d",&limit);
+    int *ptr;
+    ptr=(int *)malloc(limit * sizeof(int));
+    for(int i=0;i<limit;i++){
+        scanf("%d",ptr + i);
+    }
+    int even=0,odd=0;
+    for(int i=0;i<limit;i++){
+     if(*(ptr+i)%2==0){
+         even++;
+     }  
+     else {
+         odd++;
+     }
+    }
+    printf("EVEN NUMBERS : %d\n",even);
+    printf("ODD NUMBERS : %d",odd);
+    free(ptr);
+}
